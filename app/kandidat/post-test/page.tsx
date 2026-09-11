@@ -421,8 +421,7 @@ useEffect(() => {
   const loadCompletedSubtests = async (testId: string, sessId: string | null) => {
     if (!sessId) return;
     try {
-       const response = await fetch(`http://api.lourdesautoparts.com/api/testSessions/${sessId}/sections`);
-      //  const response = await fetch(`http://172.20.10.8:3001/api/testSessions/${sessId}/sections`);
+      const response = await fetch(`/api/testSessions/${sessId}/sections`);
 
       if (response.ok) {
         const data = await response.json();
