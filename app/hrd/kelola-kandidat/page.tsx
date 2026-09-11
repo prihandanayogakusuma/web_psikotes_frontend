@@ -166,7 +166,7 @@ interface JobLevel {
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-gray-400 mt-0.5" />
                   <div>
-                    <p className="text-xs text-gray-500">Alamat</p>
+                    <p className="text-xs text-gray-500">Tempat Lahir</p>
                     <p className="text-gray-800">{candidate.alamat || candidate.address || '-'}</p>
                   </div>
                 </div>
@@ -285,7 +285,7 @@ const CandidateEditModal = ({ candidate, jobLevels, onClose, onSave }: { candida
     if (!formData.phone.trim()) newErrors.phone = "Nomor telepon harus diisi";
     if (!formData.level_id) newErrors.level_id = "Posisi harus dipilih";
     if (!formData.birth_date) newErrors.birth_date = "Tanggal lahir harus diisi";
-    if (!formData.alamat.trim()) newErrors.alamat = "Alamat harus diisi";
+    if (!formData.alamat.trim()) newErrors.alamat = "Tempat lahir harus diisi";
     
     if (formData.password && formData.password.trim().length < 6) {
       newErrors.password = "Sandi baru minimal 6 karakter";
@@ -367,8 +367,8 @@ const CandidateEditModal = ({ candidate, jobLevels, onClose, onSave }: { candida
               {errors.birth_date && <p className="text-red-500 text-sm mt-1">{errors.birth_date}</p>}
             </div>
             <div>
-              <label className="block text-gray-700 mb-2 text-sm font-medium">Alamat *</label>
-              <textarea value={formData.alamat} onChange={(e) => setFormData({...formData, alamat: e.target.value})} className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 text-black focus:ring-blue-500 bg-gray-50 outline-none resize-none ${errors.alamat ? 'border-red-500' : 'border-gray-300'}`} rows={3} />
+              <label className="block text-gray-700 mb-2 text-sm font-medium">Tempat Lahir *</label>
+              <input type="text" value={formData.alamat} onChange={(e) => setFormData({...formData, alamat: e.target.value})} placeholder="Masukkan tempat lahir" className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 text-black focus:ring-blue-500 bg-gray-50 outline-none ${errors.alamat ? 'border-red-500' : 'border-gray-300'}`} />
               {errors.alamat && <p className="text-red-500 text-sm mt-1">{errors.alamat}</p>}
             </div>
             
@@ -657,13 +657,13 @@ const getAvailableTestsForPosition = (levelName: string) => {
 const handleAddCandidate = async () => {
     const errors: any = {};
 
-    // 1. Validasi Wajib Isi (Termasuk Tanggal Lahir dan Alamat)
+    // 1. Validasi Wajib Isi (Termasuk Tanggal Lahir dan Tempat Lahir)
     if (!newCandidate.name.trim()) errors.name = "Nama wajib diisi";
     if (!newCandidate.email.trim()) errors.email = "Email wajib diisi";
     if (!newCandidate.phone.trim()) errors.phone = "Nomor telepon wajib diisi";
     if (!newCandidate.level_id) errors.level_id = "Posisi wajib dipilih";
     if (!newCandidate.birth_date) errors.birth_date = "Tanggal lahir wajib diisi";
-    if (!newCandidate.alamat.trim()) errors.alamat = "Alamat wajib diisi";
+    if (!newCandidate.alamat.trim()) errors.alamat = "Tempat lahir wajib diisi";
 
     // 2. Validasi Anti-Duplikat (Email & No HP)
     const isEmailExist = candidates.some(c => c.email.toLowerCase() === newCandidate.email.toLowerCase());
@@ -1417,8 +1417,8 @@ const handleAddCandidate = async () => {
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 mb-2 text-sm font-bold uppercase tracking-wide">Alamat Lengkap *</label>
-                  <textarea value={newCandidate.alamat} onChange={(e) => setNewCandidate({...newCandidate, alamat: e.target.value})} className={`w-full px-4 py-3 border rounded-xl text-gray-900 focus:ring-2 focus:ring-blue-500 bg-gray-50/50 resize-none outline-none ${formErrors.alamat ? 'border-red-500' : 'border-gray-200'}`} placeholder="Masukkan alamat" rows={2} />
+                  <label className="block text-gray-700 mb-2 text-sm font-bold uppercase tracking-wide">Tempat Lahir *</label>
+                  <input type="text" value={newCandidate.alamat} onChange={(e) => setNewCandidate({...newCandidate, alamat: e.target.value})} className={`w-full px-4 py-3 border rounded-xl text-gray-900 focus:ring-2 focus:ring-blue-500 bg-gray-50/50 outline-none ${formErrors.alamat ? 'border-red-500' : 'border-gray-200'}`} placeholder="Masukkan tempat lahir" />
                   {formErrors.alamat && <p className="text-red-500 text-xs mt-1.5 font-medium">{formErrors.alamat}</p>}
                 </div>
               </div>
