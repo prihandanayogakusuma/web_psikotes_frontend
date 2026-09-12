@@ -1182,12 +1182,12 @@ const handleAddCandidate = async () => {
                         </button>
 
                         {/* Tombol Reset (Hanya muncul jika sudah/sedang mengerjakan) */}
-                        {/* {(isInProgress || isCompleted) ? (
-                          <button 
+                        {(isInProgress || isCompleted) ? (
+                          <button
                             onClick={() => {
-                              setCandidateToReset(candidate); 
+                              setCandidateToReset(candidate);
                               setSelectedTestToReset([]);
-                              setShowResetModal(true); 
+                              setShowResetModal(true);
                             }}
                             title="Reset Tes Kandidat"
                             className="w-8 h-8 flex items-center justify-center rounded-lg bg-purple-50 text-purple-600 hover:bg-purple-100 transition-colors"
@@ -1195,8 +1195,8 @@ const handleAddCandidate = async () => {
                             <RotateCcw className="w-4 h-4" />
                           </button>
                         ) : (
-                          <div className="w-8 h-8" /> 
-                        )} */}
+                          <div className="w-8 h-8" />
+                        )}
                         
                       </div>
                     </td>
@@ -1261,7 +1261,7 @@ const handleAddCandidate = async () => {
           )}
         </div>
 
-      {/* {showResetModal && candidateToReset && (
+      {showResetModal && candidateToReset && (
         <div className="fixed inset-0 z-[99999] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl w-full max-w-md shadow-2xl overflow-hidden animate-in zoom-in duration-200">
             <div className="bg-[#242467] px-6 py-4 flex justify-between items-center">
@@ -1330,7 +1330,7 @@ const handleAddCandidate = async () => {
             </div>
           </div>
         </div>
-      )} */}
+      )}
       </main>
 
       {showAddCandidate && (
