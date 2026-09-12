@@ -1,15 +1,6 @@
 import type { NextConfig } from "next";
 
 const NextConfig = {
-  allowedDevOrigins: ["14.14.14.50"],
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://api.lourdesautoparts.com/api/:path*",
-      },
-    ];
-  },
   async headers() {
     return [
       {

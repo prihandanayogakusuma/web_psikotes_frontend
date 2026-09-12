@@ -10,8 +10,7 @@ import {
 import { Domine } from "next/font/google";
 
 
-// const API_BASE_URL = 'https://api.lourdesautoparts.com';
-const API_BASE_URL = '';
+const API_BASE_URL = 'https://api.lourdesautoparts.com';
 
 export default function MultiStepRegistration() {
   const router = useRouter();

@@ -5,8 +5,7 @@ import { useRouter } from "next/navigation";
 import { Eye, EyeOff, Lock, Mail, CheckCircle, AlertCircle } from "lucide-react";
 import Image from "next/image";
 
-// const API_BASE_URL = 'https://api.lourdesautoparts.com';
-const API_BASE_URL = '';
+const API_BASE_URL = 'https://api.lourdesautoparts.com';
 
 
 export default function AuthPage() {

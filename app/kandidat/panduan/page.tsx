@@ -82,7 +82,7 @@ useEffect(() => {
       
       const fetchTestCode = async () => {
         try {
-          const response = await fetch(`/api/tests/${id}`);
+          const response = await fetch(`https://api.lourdesautoparts.com/api/tests/${id}`);
           
           if (response.ok) {
             const data = await response.json();

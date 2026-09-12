@@ -30,8 +30,7 @@ import {
   XCircle
 } from "lucide-react";
 
-// const API_BASE_URL = 'https://api.lourdesautoparts.com';
-const API_BASE_URL = '';
+const API_BASE_URL = 'https://api.lourdesautoparts.com';
 
 
 interface Participant {

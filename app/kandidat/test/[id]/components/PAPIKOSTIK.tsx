@@ -10,8 +10,7 @@ import {
   Loader2, Maximize, AlertCircle, FileText, ClipboardCheck, AlertTriangle 
 } from "lucide-react";
 
-// const API_BASE_URL = 'https://api.lourdesautoparts.com';
-const API_BASE_URL = '';
+const API_BASE_URL = 'https://api.lourdesautoparts.com';
 
 
 interface QuestionOption {

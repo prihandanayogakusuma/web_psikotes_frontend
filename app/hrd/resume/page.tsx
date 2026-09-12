@@ -9,8 +9,7 @@ import {
   X, Save, ChevronLeft, ChevronRight, ChevronDown, Download
 } from "lucide-react";
 
- // const API_BASE_URL = 'https://api.lourdesautoparts.com';
-const API_BASE_URL = '';
+const API_BASE_URL = 'https://api.lourdesautoparts.com';
 
 
 interface Participant {
