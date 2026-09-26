@@ -475,8 +475,32 @@ export default function KandidatDashboard() {
 
         <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-blue-100 overflow-hidden mb-8">
           <div className="p-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Daftar Tes Tersedia</h2>
-            
+            <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center">Daftar Tes Tersedia</h2>
+            <p className="text-gray-500 text-center mb-6">
+              Tes ditampilkan sesuai urutan yang harus dikerjakan. Selesaikan satu tes agar tes berikutnya terbuka.
+            </p>
+
+            {availableTests.length > 0 && (
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-gray-200 text-sm text-gray-600">
+                  <FileText className="w-4 h-4 text-[#242467]" />
+                  <span>Tersedia &mdash; siap dikerjakan</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-yellow-50 border border-yellow-200 text-sm text-yellow-700">
+                  <Clock className="w-4 h-4" />
+                  <span>Sedang Dikerjakan &mdash; belum selesai</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-200 text-sm text-gray-500">
+                  <AlertCircle className="w-4 h-4" />
+                  <span>Terkunci &mdash; selesaikan tes sebelumnya dulu</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-50 border border-green-200 text-sm text-green-700">
+                  <CheckCircle className="w-4 h-4" />
+                  <span>Selesai &mdash; sudah dikerjakan</span>
+                </div>
+              </div>
+            )}
+
             {availableTests.length === 0 ? (
               <div className="text-center py-12">
                 <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" />
@@ -618,7 +642,11 @@ export default function KandidatDashboard() {
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-[#242467] rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
-                  <span>Kerjakan tes secara berurutan dengan menekan tombol "Mulai Tes" yang tersedia.</span>
+                  <span>Tes wajib dikerjakan sesuai urutan dari atas ke bawah. Tes dengan status &quot;Terkunci&quot; baru bisa dibuka setelah tes di atasnya berstatus &quot;Selesai&quot;.</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-[#242467] rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
+                  <span>Tekan tombol &quot;Mulai Tes&quot; untuk tes yang berstatus Tersedia, atau &quot;Lanjutkan Tes&quot; jika sebelumnya sempat tertunda di tengah jalan.</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-[#242467] rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
@@ -626,7 +654,7 @@ export default function KandidatDashboard() {
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-[#242467] rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
-                  <span>Sistem akan memaksa mode layar penuh (Full Screen) untuk mencegah kecurangan.</span>
+                  <span>Sistem akan memaksa mode layar penuh (Full Screen) dan meminta akses kamera untuk mencegah kecurangan.</span>
                 </li>
               </ul>
               
